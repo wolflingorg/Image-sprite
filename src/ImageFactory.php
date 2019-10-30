@@ -2,7 +2,6 @@
 namespace src;
 
 use src\Image\AbstractImage;
-use src\Image\ImageGif;
 use src\Image\ImageJpeg;
 use src\Image\ImagePng;
 
@@ -17,8 +16,6 @@ class ImageFactory
     public static function create($filename)
     {
         switch (exif_imagetype($filename)) {
-            case IMAGETYPE_GIF:
-                return ImageGif::createFromFilename($filename);
             case IMAGETYPE_JPEG:
             case IMAGETYPE_JPEG2000:
             case IMAGETYPE_JPC:
