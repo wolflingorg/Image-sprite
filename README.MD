@@ -6,6 +6,7 @@ Create a `sprite.jpg` image (`width: 200px`, example `./sprite.jpg`) with all im
 
 #### Please ensure that:
 
- - you do not re-minimize posters (since they are already minimized)
- - you follow SOLID principles
- - you do not overuse `else` or `switch/case` operators
+ - You do not use any existing composer solutions
+ - You do not re-minimize posters (since they are already minimized)
+ - You follow SOLID principles
+ - You do not overuse `else` or `switch/case` operators
