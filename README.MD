@@ -1,8 +1,8 @@
 # Task
 
-The `images` directory contains two types of images: **photos** (prefix `ph_`, various width) and **posters** (prefix poster_, `width: 200px`)
+The `images` directory contains two types of images: **photos** (prefix `ph_`, various width) and **posters** (prefix `poster_`, width: `200px`)
 
-Create a `sprite.jpg` image (`width: 200px`, example `./sprite.jpg`) with all images from directory `images` (minimizing to poster’s size) following one under another.
+Create a `sprite.jpg` image (width: `200px`, example `./sprite.jpg`) with all images from directory `images` (minimizing to poster’s size) following one under another.
 
 #### Please ensure that:
 
