@@ -1,13 +1,15 @@
 <?php
 
-namespace src\Image;
+namespace src\Decorators;
 
-class PosterDecorator extends AbstractImage
+use src\Image\AbstractImage;
+
+abstract class AbstractImageDecorator extends AbstractImage
 {
     /**
      * @var AbstractImage
      */
-    private $image;
+    protected $image;
 
     public function __construct(AbstractImage $image)
     {
@@ -53,10 +55,6 @@ class PosterDecorator extends AbstractImage
      */
     public function resize($w, $h = -1)
     {
-        if (preg_match('/poster\_/', $this->image->getFilename())) {
-            return $this->image->resource;
-        }
-
         return $this->image->resize($w, $h);
     }
 
@@ -73,7 +71,7 @@ class PosterDecorator extends AbstractImage
      */
     protected function createResource($filename)
     {
-        $this->image->createResource($filename);
+        return $this->image->createResource($filename);
     }
 
     /**

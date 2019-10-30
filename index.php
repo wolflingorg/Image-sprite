@@ -1,22 +1,27 @@
 <?php
 require_once 'vendor/autoload.php';
 
-$sprite = new \src\Sprite\JpegSpriteBuilder();
+use src\Decorators\PosterDecorator;
+use src\ImageFactory;
+use src\Sprite\JpegSprite;
 
-foreach (glob('./images/*.{jpg,gif,png}', GLOB_BRACE) as $file) {
+$sprite = new JpegSprite();
+
+foreach (glob('./images/*.{jpg,png}', GLOB_BRACE) as $file) {
     try {
-        $image = \src\ImageFactory::create($file);
-        $image = new \src\Image\PosterDecorator($image);
+        $image = new PosterDecorator(
+            ImageFactory::create($file)
+        );
 
         $sprite->appendPart($image);
     } catch (\InvalidArgumentException $e) {
-        echo $e->getMessage();
+        exit($e->getMessage());
     }
 }
 
 try {
-    $image = $sprite->create(200);
-    $image->save('./sprite.jpg');
+    $sprite->create(200)
+        ->save('./sprite.jpg');
 } catch (\RuntimeException $e) {
-    echo $e->getMessage();
+    exit($e->getMessage());
 }

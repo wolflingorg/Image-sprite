@@ -4,7 +4,7 @@ namespace src\Sprite;
 
 use src\Image\ImageJpeg;
 
-class JpegSpriteBuilder extends AbstractSpriteBuilder
+class JpegSprite extends AbstractSprite
 {
     /**
      * @inheritDoc

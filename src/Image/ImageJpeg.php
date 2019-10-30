@@ -9,7 +9,7 @@ class ImageJpeg extends AbstractImage
      */
     public function save($filename)
     {
-        $result = imagejpeg($this->resource, $filename);
+        $result = imagejpeg($this->getResource(), $filename);
 
         if ($result === false) {
             throw new \RuntimeException('Could not save image');
@@ -21,10 +21,12 @@ class ImageJpeg extends AbstractImage
      */
     protected function createResource($filename)
     {
-        $this->resource = imagecreatefromjpeg($filename);
+        $resource = imagecreatefromjpeg($filename);
 
-        if (false === $this->resource) {
+        if (false === $resource) {
             throw new \RuntimeException('Could not read image');
         }
+
+        return $resource;
     }
 }

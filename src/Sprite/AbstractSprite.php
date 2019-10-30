@@ -4,7 +4,7 @@ namespace src\Sprite;
 
 use src\Image\AbstractImage;
 
-abstract class AbstractSpriteBuilder
+abstract class AbstractSprite
 {
     /**
      * @var AbstractImage[]

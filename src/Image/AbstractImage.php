@@ -7,7 +7,7 @@ abstract class AbstractImage
     /**
      * @var resource
      */
-    protected $resource;
+    private $resource;
 
     /**
      * @var string|null
@@ -27,7 +27,7 @@ abstract class AbstractImage
     {
         $image = (new static());
         $image->filename = $filename;
-        $image->createResource($filename);
+        $image->resource = $image->createResource($filename);
 
         return $image;
     }
@@ -35,7 +35,7 @@ abstract class AbstractImage
     /**
      * @param string $filename
      *
-     * @return void
+     * @return resource
      * @throws \RuntimeException
      */
     abstract protected function createResource($filename);
