@@ -4,7 +4,7 @@ The `images` directory contains two types of images: **photos** (prefix `ph_`, v
 
 Create a `sprite.jpg` image (`width: 200px`, example `./sprite.jpg`) with all images from directory `images` (minimizing to poster’s size) following one under another.
 
-####Please ensure that:
+#### Please ensure that:
 
  - you do not re-minimize posters (since they are already minimized)
  - you follow SOLID principles
